@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import Header from "./components/Header"
 import Button from "./components/Button";
-import { formatearDinero, calcularTotalPagar, calcularIntereses } from "../helpers/index";
+import { formatearDinero, calcularIntereses } from "../helpers/index";
 
 function App() {
   const [cantidad, setCantidad] = useState(500000);
@@ -50,6 +50,7 @@ function App() {
     setCantidad(valor);
   }
 
+
   return (
     <div className="my-20 max-w-lg mx-auto bg-white shadow p-10">
 
@@ -57,11 +58,20 @@ function App() {
       <Header />
 
       {/* Buttons */}
-      <div className="flex justify-between my-6">
+      <div className="flex justify-evenly my-6">
         <Button 
           operador='-'
           fn={handleClickDecremento}
         />        
+
+        <input 
+          type="text" 
+          className="w-50 p-2 gb-white border border-gray-300 rounded-lg text-center text-xl font-bold text-gray-500"
+          placeholder="Ej: $500.000"
+          value={cantidad}
+          onChange={handleChange}
+        />
+
         <Button 
           operador='+'
           fn={handleClickIncremento}
@@ -104,7 +114,6 @@ function App() {
         Ingresá la <span className="text-red-500">Tasa de Interés </span>vigente
       </h2>
 
-      <label type="number" name="tasa" id="tasa"></label>
       <input 
         type="text" 
         className="mt-1 w-full p-2 gb-white border border-gray-300 rounded-lg text-center text-xl font-bold text-gray-500"
@@ -121,7 +130,10 @@ function App() {
         <p className="text-xl text-gray-500 text-center font-bold">PLAZO: {plazo} día/s</p>
         <p className="text-xl text-gray-500 text-center font-bold">TASA: {tasa} %</p>
         <p className="text-xl text-gray-500 text-center font-bold">INTERESES: {formatearDinero(intereses)}</p>
-        <p className="text-xl text-gray-500 text-center font-bold">TOTAL: {formatearDinero(total)}</p>
+        <p className="text-center text-5xl my-10 font-extrabold text-blue-500 flex flex-wrap justify-center">
+          <span className="text-xl text-gray-500 text-center font-bold">Total a Cobrar:</span>
+          {formatearDinero(total)}
+        </p>
       </div>
 
     </div>
