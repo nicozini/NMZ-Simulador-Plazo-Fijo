@@ -2,4 +2,4 @@ Simulador de Plazos Fijos
 Utilizo Vite React, TailwindCSS
 
 Deployment
-https://stately-centaur-fcee8d.netlify.app/
+https://papaya-kashata-5ba46e.netlify.app/
