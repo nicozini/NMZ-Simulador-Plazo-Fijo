@@ -7,7 +7,7 @@ function Header() {
             </h2>
 
             <h2 className="text-2xl m-4 font-extrabold text-gray-500 text-center">
-                ¿Cuánto <span className="text-red-600">dinero </span> querés invertir?
+                ¿Cuánto <span className="text-red-600">dinero </span> querés invertir?.
             </h2>
         </div>
     )
